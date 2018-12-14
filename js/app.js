@@ -1,5 +1,4 @@
 /** My TODO list for here
- *  - Show and Hide Modals
  *  - Send the request when the confirm button is pressed
  */
 
@@ -21,4 +20,16 @@ jQuery(document).ready(function() {
   jQuery("[data='unselect-coupon']").click(function() {
     hideCoupon();
   });
+});
+
+jQuery("[data='cancel-button']").click(function() {
+  showModal("cancel");
+});
+
+jQuery("[data='confirm-button']").click(function() {
+  showModal();
+});
+
+jQuery("[data='modal']").click(function() {
+  hideModal();
 });

@@ -88,15 +88,22 @@
         </section>
 
         <div class="checkout__buttons">
-          <button class="btn btn__cancel">cancelar</button>
-          <button class="btn btn__confirm">confirmar</button>
+          <button data="cancel-button" class="btn btn__cancel">cancelar</button>
+          <button data="confirm-button" class="btn btn__confirm">
+            confirmar
+          </button>
         </div>
         <div>
-          <div class="modal" style="display:none">
+          <div data="modal" class="modal hide">
             <div class="modal__box">
-              <img src="/img/cart.png" alt="cart" class="modal__icon" />
-              <h4 class="modal__title">{modal.title}</h4>
-              <p class="modal__text">{modal.message}</p>
+              <img
+                data="modal-image"
+                src="/img/cart.png"
+                alt="cart"
+                class="modal__icon"
+              />
+              <h4 data="modal-title" class="modal__title"></h4>
+              <p data="modal-text" class="modal__text"></p>
             </div>
           </div>
         </div>
