@@ -1,6 +1,4 @@
-var checkoutData;
 jQuery.get('/api/checkouts/:checkoutId', function(data) {
-  checkoutData = data;
   console.log(data);
   $("[data='product-image']").prop('src', data.product.image); // change the image for the image of the server
   loadCoupons(data.checkout.availableCoupons);
@@ -8,12 +6,33 @@ jQuery.get('/api/checkouts/:checkoutId', function(data) {
   getTotal();
 });
 
+jQuery(document).ready(function() {
+  jQuery("[data='coupon']").click(function() {
+    selectCoupon(this);
+  });
+
+  jQuery("[data='unselect-coupon']").click(function() {
+    unselectCoupon();
+  });
+});
+
+function selectCoupon(context) {
+  var discount = $(context).find("[data='coupon-discount']");
+  $("[data='coupon-value']").text(discount.text());
+  $("[data='selected-coupon']").show();
+  getTotal();
+}
+function unselectCoupon() {
+  $("[data='coupon-value']").text('R$ 00.00');
+  $("[data='selected-coupon']").hide();
+  getTotal();
+}
 function loadCoupons(coupons) {
   for (var i = 0; i < coupons.length; i++) {
     $("[data='coupons-list']").append(
-      "<li><label class='checkbox__container'><div class='coupon'><span>" +
+      "<li><label data='coupon' class='checkbox__container'><div class='coupon'><span>" +
         coupons[i].title +
-        "</span><span class='coupon__discount'>" +
+        "</span><span data='coupon-discount' class='coupon__discount'>" +
         '- R$ ' +
         coupons[i].discount.toFixed(2) +
         "</span></div><input type='radio' name='radio' value='" +
@@ -31,7 +50,7 @@ function getTotal() {
   var initialValue = getCurrency($("[data='product-value']").text());
   var couponValue = getCurrency($("[data='coupon-value']").text());
   var shippmentValue = getCurrency($("[data='shippment-value']").text());
-  var totalValue = initialValue + shippmentValue - couponValue;
+  var totalValue = initialValue + shippmentValue + couponValue;
   $("[data='total-value']").text('R$ ' + totalValue);
 }
 
