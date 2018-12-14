@@ -1,3 +1,8 @@
+/** My TODO list for here
+ *  - Fix urgently the way I'm getting the price. The way that I'm doing right now is not safe AT ALL
+ *  - Show and Hide Modals
+ *  - Send the request when the confirm button is pressed
+ */
 jQuery.get('/api/checkouts/:checkoutId', function(data) {
   console.log(data);
   $("[data='product-image']").prop('src', data.product.image); // change the image for the image of the server
@@ -17,10 +22,18 @@ jQuery(document).ready(function() {
 });
 
 function selectCoupon(context) {
-  var discount = $(context).find("[data='coupon-discount']");
-  $("[data='coupon-value']").text(discount.text());
-  $("[data='selected-coupon']").show();
-  getTotal();
+  var couponId = $(context)
+    .find("[data='coupon-id']")
+    .val();
+  var url = '/api/checkouts/:checkoutId?couponId=' + couponId;
+  console.log(url);
+  jQuery.get(url, function(data) {
+    console.log(data);
+    loadResume(data.product, data.checkout);
+    // $("[data='coupon-value']").text(couponId.text());
+    $("[data='selected-coupon']").show();
+    // getTotal();
+  });
 }
 function unselectCoupon() {
   $("[data='coupon-value']").text('R$ 00.00');
@@ -32,10 +45,10 @@ function loadCoupons(coupons) {
     $("[data='coupons-list']").append(
       "<li><label data='coupon' class='checkbox__container'><div class='coupon'><span>" +
         coupons[i].title +
-        "</span><span data='coupon-discount' class='coupon__discount'>" +
+        "</span><span class='coupon__discount'>" +
         '- R$ ' +
         coupons[i].discount.toFixed(2) +
-        "</span></div><input type='radio' name='radio' value='" +
+        "</span></div><input data='coupon-id' type='radio' name='radio' value='" +
         coupons[i].id +
         "' /><span class='checkbox__checkmark' ></span></label></li>"
     );
