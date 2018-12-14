@@ -34,12 +34,12 @@
 
       <section>
           <div class="checkout__product__image">
-            <img src="default" alt="product image" />
+            <img data="product-image" src="default" alt="product image" />
           </div>
 
           <section class="checkout__coupons">
             <h3 class="checkout__title">cupons</h3>
-            <ul class="checkout__coupons__list">
+            <ul data="coupons-list" class="checkout__coupons__list">
               <li>
                 <label class="checkbox__container">
                   não usar cupom
@@ -47,33 +47,8 @@
                     type="radio"
                     name="radio"
                     value="none"
-                    defaultchecked="checked"
+                    checked="checked"
                   />
-                  <span class="checkbox__checkmark" />
-                </label>
-              </li>
-
-              <li>
-                <label class="checkbox__container">
-                  <div class="coupon">
-                    <span>Titilo do Cupom</span>
-                    <span class="coupon__discount">
-                      - R$ 10.00
-                    </span>
-                  </div>
-                  <input type="radio" name="radio" value="{coupon.id}" />
-                  <span class="checkbox__checkmark" />
-                </label>
-              </li>
-              <li>
-                <label class="checkbox__container">
-                  <div class="coupon">
-                    <span>Titilo do Cupom</span>
-                    <span class="coupon__discount">
-                      - R$ 10.00
-                    </span>
-                  </div>
-                  <input type="radio" name="radio" value="{coupon.id}" />
                   <span class="checkbox__checkmark" />
                 </label>
               </li>
