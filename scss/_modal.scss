@@ -21,6 +21,10 @@
     margin: 90% auto 0 auto;
     text-align: center;
 
+    @include d(m) {
+      margin: 37% auto 0 auto;
+    }
+
     .modal__icon {
       display: block;
       width: 25px;

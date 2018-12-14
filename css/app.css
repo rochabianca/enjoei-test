@@ -158,6 +158,12 @@
   text-align: center;
 }
 
+@media screen and (min-width: 760px) and (max-width: 1199px) {
+  .modal .modal__box {
+    margin: 37% auto 0 auto;
+  }
+}
+
 .modal .modal__box .modal__icon {
   display: block;
   width: 25px;
@@ -198,9 +204,17 @@
   color: #e85657;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
 .container {
   margin: 0 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .hide {

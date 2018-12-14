@@ -1,14 +1,23 @@
-@import '_header';
-@import '_btn';
-@import '_checkbox';
-@import '_coupon';
-@import '_checkout';
-@import '_modal';
-@import '_resume';
+@import "_mixins";
+@import "_header";
+@import "_btn";
+@import "_checkbox";
+@import "_coupon";
+@import "_checkout";
+@import "_modal";
+@import "_resume";
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
 .container {
   margin: 0 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .hide {
