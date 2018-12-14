@@ -9,9 +9,9 @@
     <title>Checkout</title>
     <link rel="stylesheet" type="text/css" href="/css/app.min.css" />
     <link
-    href="https://fonts.googleapis.com/css?family=Montserrat:300i,400,700"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css?family=Montserrat:300i,400,700"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -33,78 +33,73 @@
       </header>
 
       <section>
-          <div class="checkout__product__image">
-            <img data="product-image" src="default" alt="product image" />
-          </div>
+        <div class="checkout__product__image">
+          <img data="product-image" src="default" alt="product image" />
+        </div>
 
-          <section class="checkout__coupons">
-            <h3 class="checkout__title">cupons</h3>
-            <ul data="coupons-list" class="checkout__coupons__list">
-              <li>
-                <label class="checkbox__container">
-                  não usar cupom
-                  <input
-                    type="radio"
-                    name="radio"
-                    value="none"
-                    checked="checked"
-                  />
-                  <span class="checkbox__checkmark" />
-                </label>
-              </li>
-            </ul>
-          </section>
+        <section class="checkout__coupons">
+          <h3 class="checkout__title">cupons</h3>
+          <ul data="coupons-list" class="checkout__coupons__list">
+            <li>
+              <label class="checkbox__container">
+                não usar cupom
+                <input
+                  type="radio"
+                  name="radio"
+                  value="none"
+                  checked="checked"
+                />
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </li>
+          </ul>
+        </section>
 
-          <section class="resume">
-            <h3 class="checkout__title">resumo</h3>
-      
-            <table class="resume__table">
-              <tbody>
-                <tr>
-                  <td>valor original</td>
-                  <td class="resume__table--min">
-                    R$ 100
-                  </td>
-                </tr>
-                  <tr>
-                    <td>cupom</td>
-                    <td class="resume__table--min resume__coupon">
-                      - R$ 20
-                    </td>
-                  </tr>
-                <tr>
-                  <td>frete</td>
-                  <td class="resume__table--min">
-                    R$ 80
-                  </td>
-                </tr>
-                <tr>
-                  <td>total</td>
-                  <td class="resume__table--min">
-                    <b>R$ 120</b>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+        <section class="resume">
+          <h3 class="checkout__title">resumo</h3>
 
-          <div class="checkout__buttons">
-            <button class="btn btn__cancel">
-              cancelar
-            </button>
-            <button class="btn btn__confirm">
-              confirmar
-            </button>
-          </div>
-          <div>
-            <div class="modal"  style="display:none">
-              <div class="modal__box">
-                <img src="/img/cart.png" alt="cart" class="modal__icon" />
-                <h4 class="modal__title">{modal.title}</h4>
-                <p class="modal__text">{modal.message}</p>
-              </div>
+          <table class="resume__table">
+            <tbody>
+              <tr>
+                <td>valor original</td>
+                <td data="product-value" class="resume__table--min">R$ 100</td>
+              </tr>
+              <tr class="hide">
+                <td>cupom</td>
+                <td
+                  data="coupon-value"
+                  class="resume__table--min resume__coupon"
+                >
+                  - R$ 00
+                </td>
+              </tr>
+              <tr>
+                <td>frete</td>
+                <td data="shippment-value" class="resume__table--min">R$ 80</td>
+              </tr>
+              <tr>
+                <td>total</td>
+                <td data="total-value" class="resume__table--min">
+                  <b>R$ 120</b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="checkout__buttons">
+          <button class="btn btn__cancel">cancelar</button>
+          <button class="btn btn__confirm">confirmar</button>
+        </div>
+        <div>
+          <div class="modal" style="display:none">
+            <div class="modal__box">
+              <img src="/img/cart.png" alt="cart" class="modal__icon" />
+              <h4 class="modal__title">{modal.title}</h4>
+              <p class="modal__text">{modal.message}</p>
             </div>
           </div>
+        </div>
       </section>
     </div>
 

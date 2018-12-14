@@ -1,12 +1,16 @@
-@import "_header";
-@import "_btn";
-@import "_checkbox";
-@import "_coupon";
-@import "_checkout";
-@import "_modal";
-@import "_resume";
+@import '_header';
+@import '_btn';
+@import '_checkbox';
+@import '_coupon';
+@import '_checkout';
+@import '_modal';
+@import '_resume';
 
 .container {
   margin: 0 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hide {
+  display: none;
 }
